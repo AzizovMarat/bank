@@ -1,0 +1,89 @@
+POST http://localhost:8081/account/create
+Content-Type: application/json
+
+{
+  "account": {
+    "name": "Marat",
+    "pin": "0112"
+  }
+}
+
+###
+
+POST http://localhost:8081/account/create
+Content-Type: application/json
+
+{
+  "account": {
+    "name": "Alex",
+    "pin": "0000"
+  }
+}
+
+###
+
+POST http://localhost:8081/transfer/deposit
+Content-Type: application/json
+
+{
+  "account": {
+    "name": "Marat",
+    "pin": "0112"
+  },
+  "amount": 100.21
+}
+
+###
+
+POST http://localhost:8081/transfer/withdraw
+Content-Type: application/json
+
+{
+  "account": {
+    "name": "Marat",
+    "pin": "0112"
+  },
+  "amount": 5.00
+}
+
+###
+
+POST http://localhost:8081/transfer/transfer
+Content-Type: application/json
+
+{
+  "account": {
+    "name": "Marat",
+    "pin": "0112"
+  },
+  "amount": 1.21,
+  "recipient": "Alex"
+}
+
+###
+
+#GET http://localhost:8081/history/all
+
+###
+
+POST http://localhost:8081/history/person
+Content-Type: application/json
+
+{
+  "account": {
+    "name": "Marat",
+    "pin": "0112"
+  }
+}
+
+###
+
+POST http://localhost:8081/history/person
+Content-Type: application/json
+
+{
+  "account": {
+    "name": "Alex",
+    "pin": "0000"
+  }
+}
